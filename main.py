@@ -17,6 +17,7 @@ def generate_pass():
     shuffle(password)
     password = "".join(password)
     password_entry.insert(0, password)
+    pyperclip.copy(password)
 
 
 
