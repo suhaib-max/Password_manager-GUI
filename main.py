@@ -9,12 +9,15 @@ def submit_add():
     data_web = website_entry.get()
     data_email = Email_entry.get()
     data_pass = password_entry.get()
-    with open("data.txt","a") as data:
-        data.write(f"{data_web} | {data_email} | {data_pass}\n")
-        #after apppending
-        website_entry.delete(0, END)
-        Email_entry.delete(0, END)
-        password_entry.delete(0, END)
+    is_ok = messagebox.askokcancel(title="Website",message=f"These are details entered: \nEmail: {data_email}"
+                                                   f"\n password: {data_pass}\n Is it ok to save")
+    if is_ok:
+        with open("data.txt","a") as data:
+            data.write(f"{data_web} | {data_email} | {data_pass}\n")
+            #after apppending
+            website_entry.delete(0, END)
+            Email_entry.delete(0, END)
+            password_entry.delete(0, END)
 
 
 
