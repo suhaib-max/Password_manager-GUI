@@ -9,7 +9,7 @@ def submit_add():
     data_email = Email_entry.get()
     data_pass = password_entry.get()
     with open("data.txt","a") as data:
-        data.write(f"{data_web} | {data_email} | {data_pass}")
+        data.write(f"{data_web} | {data_email} | {data_pass}\n")
         #after apppending
         website_entry.delete(0, END)
         Email_entry.delete(0, END)
