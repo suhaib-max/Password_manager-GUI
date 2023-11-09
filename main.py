@@ -3,11 +3,17 @@ from tkinter import *
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def submit_add():
+    #delete function to delete when a user entered then delete(first, and last index) or (0, END)
+
     data_web = website_entry.get()
     data_email = Email_entry.get()
     data_pass = password_entry.get()
     with open("data.txt","a") as data:
         data.write(f"{data_web} | {data_email} | {data_pass}")
+        #after apppending
+        website_entry.delete(0, END)
+        Email_entry.delete(0, END)
+        password_entry.delete(0, END)
 
 
 
