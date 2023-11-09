@@ -2,6 +2,17 @@ from tkinter import *
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
+def submit_add():
+    data_web = website_entry.get()
+    data_email = Email_entry.get()
+    data_pass = password_entry.get()
+    with open("data.txt","a") as data:
+        data.write(f"{data_web} | {data_email} | {data_pass}")
+
+
+
+
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
@@ -38,7 +49,7 @@ password_entry.grid(column=1, row=3)
 Generate_pass_button = Button(text="Generate Password")
 Generate_pass_button.grid(column=2, row=3, columnspan=2)
 
-pass_add_button = Button(text="Add", width=36)
+pass_add_button = Button(text="Add", width=36,command=submit_add)
 pass_add_button.grid(column=1, row=4, columnspan=2)
 
 
