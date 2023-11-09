@@ -31,4 +31,13 @@ Email_entry.grid(column=1, row=2, columnspan=2)
 password_entry = Entry(width=21)
 password_entry.grid(column=1, row=3)
 
+#Button
+
+Generate_pass_button = Button(text="Generate Password")
+Generate_pass_button.grid(column=2, row=3, columnspan=2)
+
+pass_add_button = Button(text="Add", width=36)
+pass_add_button.grid(column=1, row=4, columnspan=2)
+
+
 window.mainloop()
