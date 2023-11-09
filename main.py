@@ -9,9 +9,12 @@ def submit_add():
     data_web = website_entry.get()
     data_email = Email_entry.get()
     data_pass = password_entry.get()
-    is_ok = messagebox.askokcancel(title="Website",message=f"These are details entered: \nEmail: {data_email}"
+    if len(data_web) == 0 or len(data_email) == 0 or len(data_pass) == 0:
+        messagebox.showinfo(title="Oops", message="please don't leave any field empty")
+    else:
+        messagebox.askokcancel(title="Website",message=f"These are details entered: \nEmail: {data_email}"
                                                    f"\n password: {data_pass}\n Is it ok to save")
-    if is_ok:
+
         with open("data.txt","a") as data:
             data.write(f"{data_web} | {data_email} | {data_pass}\n")
             #after apppending
